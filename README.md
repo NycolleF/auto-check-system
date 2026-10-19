@@ -48,7 +48,7 @@ O AutoCheck Manager busca reduzir operacoes manuais na oficina e melhorar:
 ## Estrutura do repositorio
 
 ```text
-auto-chek-system/
+auto-check-system/
 |- backend/
 |  |- controllers/
 |  |- database/
@@ -79,13 +79,13 @@ Como o MVP atual e frontend estatico, nao precisa instalar dependencias.
 1. Clone o repositorio:
 
 ```bash
-git clone https://github.com/NycolleF/auto-chek-system.git
+git clone https://github.com/NycolleF/auto-check-system.git
 ```
 
 1. Entre na pasta do projeto:
 
 ```bash
-cd auto-chek-system
+cd auto-check-system
 ```
 
 1. Abra o arquivo `frontend/index.html` no navegador.

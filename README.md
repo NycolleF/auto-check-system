@@ -1,106 +1,62 @@
 # AutoCheck Manager
 
-Sistema de gestao para oficina mecanica com foco no fluxo inicial de atendimento: cadastro de cliente, cadastro de veiculo e abertura de ordem de servico (OS).
+Sistema de gestão para oficina mecânica com foco no começo do atendimento: cadastro do cliente, cadastro do veículo e abertura da ordem de serviço (OS).
 
-## Status do projeto
+**[Testar online](https://nycollef.github.io/auto-check-system/)**
+
+![Tela de cadastro de veículo](print.jpg)
+
+## Status
 
 Projeto em fase inicial (MVP).
 
-- Frontend funcional em HTML, CSS e JavaScript
-- Persistencia local em `localStorage`
-- Estrutura de backend criada, ainda sem implementacao versionada
+- Frontend funcionando em HTML, CSS e JavaScript
+- Dados salvos no navegador (`localStorage`)
+- Pasta do backend criada, ainda sem código
 
-## Problema que o sistema resolve
+## Problema que resolve
 
-O AutoCheck Manager busca reduzir operacoes manuais na oficina e melhorar:
+Na oficina muita coisa é anotada à mão. O AutoCheck ajuda a:
 
-- Rastreabilidade de clientes, veiculos e OS
-- Organizacao do fluxo de entrada de servicos
-- Controle de regras basicas de negocio
+- Encontrar fácil o histórico de clientes, veículos e OS
+- Organizar a entrada dos carros
+- Seguir regras básicas sem depender da memória de quem atende
 
-## Funcionalidades atuais
+## Funcionalidades
 
 - Cadastro de clientes
-  - Validacao de CPF duplicado
-- Cadastro de veiculos
-  - Vinculo obrigatorio com cliente (RN02)
-  - Padronizacao de placa
-  - Bloqueio de placa duplicada
-- Abertura de ordem de servico (OS)
-  - Numero sequencial automatico no formato `OS-ANO-XXXXXX`
-  - Filtro de veiculos por cliente
-  - Bloqueio de duas OS abertas para o mesmo veiculo (RN01)
-- Tema da interface (claro/escuro) com persistencia
+  - Bloqueia CPF repetido
+- Cadastro de veículos
+  - Todo veículo precisa ter um cliente (RN02)
+  - Placa padronizada automaticamente
+  - Bloqueia placa repetida
+- Abertura de OS
+  - Número automático no formato `OS-ANO-XXXXXX`
+  - Filtra os veículos pelo cliente escolhido
+  - Não deixa abrir duas OS para o mesmo veículo (RN01)
+- Tema claro e escuro
 
-## Regras de negocio aplicadas no MVP
+## Regras de negócio
 
-- RN01: nao permite duas OS abertas para o mesmo veiculo
-- RN02: veiculo deve estar vinculado a um cliente
-- Validacao extra: CPF e placa sem duplicidade no frontend
+- RN01: não permite duas OS abertas para o mesmo veículo
+- RN02: todo veículo precisa estar ligado a um cliente
+- CPF e placa não podem se repetir
 
-## Tecnologias utilizadas
+## Tecnologias
 
 - HTML5
 - CSS3
-- JavaScript (vanilla)
-- `localStorage` (persistencia local no navegador)
+- JavaScript
+- `localStorage`
 
-## Estrutura do repositorio
+## Como rodar
 
-```text
-auto-check-system/
-|- backend/
-|  |- controllers/
-|  |- database/
-|  |- models/
-|  |- routes/
-|  |- services/
-|- docs/
-|  |- diagramas/
-|  |- requisitos/
-|     |- documento-projeto.md
-|     |- modelo-banco.sql
-|- frontend/
-|  |- app.js
-|  |- index.html
-|  |- styles.css
-|  |- components/
-|  |- pages/
-|     |- cadastro-cliente.html
-|     |- cadastro-veiculo.html
-|     |- abrir-os.html
-|  |- services/
-```
+Não precisa instalar nada.
 
-## Como executar localmente
+1. Clone o repositório: `git clone https://github.com/NycolleF/auto-check-system.git`
+2. Abra o arquivo `frontend/index.html` no navegador
 
-Como o MVP atual e frontend estatico, nao precisa instalar dependencias.
+## Documentação
 
-1. Clone o repositorio:
-
-```bash
-git clone https://github.com/NycolleF/auto-check-system.git
-```
-
-1. Entre na pasta do projeto:
-
-```bash
-cd auto-check-system
-```
-
-1. Abra o arquivo `frontend/index.html` no navegador.
-
-Opcional: usar extensao Live Server no VS Code para facilitar testes.
-
-## Banco de dados (documentacao)
-
-O modelo relacional inicial esta em:
-
-- `docs/requisitos/modelo-banco.sql`
-
-Esse arquivo descreve tabelas como `clientes`, `veiculos`, `ordem_servico`, `diagnostico`, `agenda` e `historico_servico`, alem de indice para reforcar a RN01 no banco.
-
-## Documentacao complementar
-
-- Requisitos e regras do sistema: `docs/requisitos/documento-projeto.md`
-- Modelo inicial do banco: `docs/requisitos/modelo-banco.sql`
+- Requisitos e regras: `docs/requisitos/documento-projeto.md`
+- Modelo do banco de dados: `docs/requisitos/modelo-banco.sql` (tabelas de clientes, veículos, OS, diagnóstico, agenda e histórico)

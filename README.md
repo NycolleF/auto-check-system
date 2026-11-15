@@ -42,6 +42,14 @@ Na oficina muita coisa é anotada à mão. O AutoCheck ajuda a:
 - RN02: todo veículo precisa estar ligado a um cliente
 - CPF e placa não podem se repetir
 
+## O que pratiquei neste projeto
+
+- Salvar e ler dados no navegador com `localStorage` e JSON
+- Validar formulários (CPF e placa que não podem se repetir)
+- Transformar regras da oficina (RN01 e RN02) em código
+- Montar o modelo de um banco de dados relacional, com chaves estrangeiras e índice
+- Tema claro e escuro
+
 ## Tecnologias
 
 - HTML5
